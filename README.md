@@ -22,19 +22,17 @@ The package includes:
 ecorun/
 │
 ├── web-app/
-│   └── ui-module.war
+│   └── DocXFerUI.war
 │
 ├── services/
-│   ├── box-service.jar
-│   └── ntfs-service.jar
+│   ├── BoxService.jar
+│   └── NTFSService.jar
 │
 ├── database/
 │   └── db_init.sql
 │
 ├── config/
-    ├── service.properties
-    ├── db.properties
-    └── config.json
+    ├── temp/
 ```
 
 ---
@@ -46,7 +44,7 @@ ecorun/
 **File**
 
 ```
-ui-module.war
+DocXFerUI.war
 ```
 
 **Description**
@@ -76,8 +74,8 @@ TOMCAT_HOME/webapps/
 **Files**
 
 ```
-box-service.jar
-ntfs-service.jar
+BoxService.jar
+NTFSService.jar
 ```
 
 **Description**
@@ -96,11 +94,11 @@ Run the services using Java.
 Example:
 
 ```
-java -jar box-service.jar jobname command port
+java -jar BoxService.jar jobname command port
 ```
 
 ```
-java -jar ntfs-service.jar jobname command port
+java -jar NTFSService.jar jobname command port
 ```
 
 ---
@@ -139,21 +137,19 @@ mysql -u username -p database_name < database/db_init.sql
 
 # Configuration
 
+## Configuration Setup
+
 Configuration files are provided in the `config` directory.
 
-```
-service.properties
-db.properties
-config.json
-```
+The `temp` folder must be placed directly in the `C:\` drive:
 
 These configuration files control:
 
-* Database connection settings
-* Storage service credentials
-* Application environment settings
+- Database connection settings
+- Storage service credentials
+- Application environment settings
 
-The required properties files should be placed in the appropriate directories as specified during deployment.
+Ensure that the required properties files are placed in the appropriate directories as specified during deployment.
 
 ---
 
@@ -185,47 +181,11 @@ mysql -u username -p database_name < database/db_init.sql
 
 Place the required application binaries and configuration files in their respective locations before starting the system.
 
-### Place Core and Service JARs
 
-Copy the **startup, core, and service JAR files** to the following directory:
+### Place Temp Folder
 
-```
-
-<APPLICATION_HOME>/lib/
-
-```
-
-Example files:
-
-```
-
-startup-core.jar
-box-service.jar
-ntfs-service.jar
-
-```
-
-### Place Configuration Files
-
-Copy all required **properties and configuration files** to the configuration directory:
-
-```
-
-<APPLICATION_HOME>/config/
-
-```
-
-Example configuration files:
-
-```
-
-serivce.properties
-db.properties
-config.json
-
-```
-
-Ensure that all environment-specific values such as database connection details, storage credentials, and system paths are correctly configured before starting the application.
+A **`temp` folder is already provided inside the `config` directory**.  
+Copy this **`temp` folder** and place it directly in the `C:\` drive.
 
 ---
 
@@ -234,7 +194,7 @@ Ensure that all environment-specific values such as database connection details,
 Copy the WAR file to Tomcat.
 
 ```
-web-app/migration-service.war
+web-app/DocXFerUI.war
 ```
 
 Destination:
@@ -255,7 +215,7 @@ After deployment, verify that the application is accessible.
 Application URL:
 
 ```
-http://localhost:8080/ui-module
+http://localhost:8080/DocXFerUI
 ```
 
 Check logs to confirm:
@@ -286,7 +246,7 @@ Service logs will be generated in the configured log directory defined in the ap
 
 ```
 Migration Platform Version: 1.0
-Build Date: YYYY-MM-DD
+Build Date: 03-05-2026
 ```
 
 ---
