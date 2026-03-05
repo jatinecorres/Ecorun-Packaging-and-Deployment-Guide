@@ -226,8 +226,6 @@ config.json
 ```
 
 Ensure that all environment-specific values such as database connection details, storage credentials, and system paths are correctly configured before starting the application.
-```
-
 
 ---
 
