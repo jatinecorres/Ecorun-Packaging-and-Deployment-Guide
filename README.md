@@ -183,9 +183,51 @@ mysql -u username -p database_name < database/db_init.sql
 
 ## Step 2 – Configure Application
 
-Update the configuration files located in the `config` directory.
+Place the required application binaries and configuration files in their respective locations before starting the system.
 
-Ensure all environment-specific values are correctly configured before starting the application.
+### Place Core and Service JARs
+
+Copy the **startup, core, and service JAR files** to the following directory:
+
+```
+
+<APPLICATION_HOME>/lib/
+
+```
+
+Example files:
+
+```
+
+startup-core.jar
+box-service.jar
+ntfs-service.jar
+
+```
+
+### Place Configuration Files
+
+Copy all required **properties and configuration files** to the configuration directory:
+
+```
+
+<APPLICATION_HOME>/config/
+
+```
+
+Example configuration files:
+
+```
+
+serivce.properties
+db.properties
+config.json
+
+```
+
+Ensure that all environment-specific values such as database connection details, storage credentials, and system paths are correctly configured before starting the application.
+```
+
 
 ---
 
