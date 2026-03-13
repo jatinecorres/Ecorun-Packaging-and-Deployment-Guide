@@ -172,7 +172,8 @@ Ensure the following software is installed before deployment.
 Run the database initialization script.
 
 ```
-mysql -u username -p database_name < database/db_init.sql
+source <path of db_init.sql>
+mysql -u root -p 
 ```
 
 ---
