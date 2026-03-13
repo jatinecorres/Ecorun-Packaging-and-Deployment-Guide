@@ -334,7 +334,6 @@ BEGIN
     WHERE update_time >= NOW() - INTERVAL 1 HOUR;
 END$$
 
-DELIMITER ;
 
 
 -- ==========================================================
@@ -507,7 +506,6 @@ END$$
 -- FUNCTION: get_combined_peak_processing_time
 -- ==========================================================
 
-DELIMITER $$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_combined_peak_processing_time`()
 BEGIN
@@ -595,8 +593,6 @@ BEGIN
     ) t;
 
 END$$
-
-DELIMITER ;
 
 
 
