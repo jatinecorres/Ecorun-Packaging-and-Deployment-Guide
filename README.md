@@ -108,7 +108,7 @@ java -jar NTFSService.jar jobname command port
 **File**
 
 ```
-db_init.sql
+source <path of db_init.sql>
 ```
 
 **Description**
@@ -130,7 +130,7 @@ MySQL
 **Execution**
 
 ```
-mysql -u username -p database_name < database/db_init.sql
+mysql -u root -p
 ```
 
 ---
