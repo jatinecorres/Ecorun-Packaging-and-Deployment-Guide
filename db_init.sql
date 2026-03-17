@@ -620,7 +620,7 @@ DELIMITER ;
 INSERT INTO docxfer_systems
 (system_id, system_name, system_type, description, driver_class)
 VALUES
-(1, 'Box', 'Box', 'Box Content Management System', 'com.tcs.docxfer.box.connector.BoxConnectorImpl'),
+(1, 'Box', 'Box', 'Box Content Management System', 'box.connector.BoxConnectorImpl'),
 (2, 'NTFS', 'NTFS', 'New Technology File System', 'com.tcs.docxfer.ntfs.connector.NTFSConnectorImpl'),
 (3, 'FileNetP8', 'FileNetP8', 'IBM FileNet P8 System', 'com.ecorun.fn.p8.connector.EcorunP8ConnectorImpl'),
 (4, 'OracleWCC', 'OracleWCC', 'Oracle WebCenter Content', 'com.ecorun.wcc.connector.EcorunWCCConnectorImpl'),
