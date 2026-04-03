@@ -25,8 +25,7 @@ ecorun/
 │   └── DocXFerUI.war
 │
 ├── services/
-│   ├── BoxService.jar
-│   └── NTFSService.jar
+│   ├── Service.jar
 │
 ├── database/
 │   └── db_init.sql
@@ -162,6 +161,7 @@ Ensure the following software is installed before deployment.
 | Java          | 8            |
 | Apache Tomcat | 9.0          |
 | MySQL         | 5.7.25       |
+| Elastc Search | 9           |
 
 ---
 
@@ -175,10 +175,22 @@ Run the database initialization script.
 source <path of db_init.sql>
 mysql -u root -p 
 ```
+---
+## Step 2 – Download & Install Elasticsearch
+
+Visit the official Elasticsearch download page at **[Download Elasticsearch | Elastic](https://www.elastic.co/downloads/elasticsearch)**, select the **Windows** platform, download the `.zip` package, and extract it to `C:\elasticsearch`.
+
+### Start Elasticsearch & Save Password
+
+Run `elasticsearch.bat` from `C:\elasticsearch\bin` via Command Prompt as Administrator. On first launch, a password for the `elastic` user will be generated in the console output — **copy and save it immediately**.
+
+### Update Properties File
+
+Open the **`es.properties`** file inside the `config` directory and update the Elasticsearch password field with the generated password:
 
 ---
 
-## Step 2 – Configure Application
+## Step 3 – Configure Application
 
 Place the required application binaries and configuration files in their respective locations before starting the system.
 
@@ -190,7 +202,7 @@ Copy this **`temp` folder** and place it directly in the `C:\` drive.
 
 ---
 
-## Step 3 – Deploy Web Application
+## Step 4 – Deploy Web Application
 
 Copy the WAR file to Tomcat.
 
